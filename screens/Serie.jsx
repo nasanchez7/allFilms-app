@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, ImageBackground, ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet, ImageBackground, ScrollView, Button } from "react-native";
 import { useEffect, useState } from "react";
 import { AntDesign } from '@expo/vector-icons';
 import Cast from "../components/Show/Cast";
@@ -82,6 +82,12 @@ const Serie = ({ route }) => {
             <Episodies
             lastCap={serieInfo.last_episode_to_air}
             nextCap={serieInfo.next_episode_to_air}
+            />
+            <Button 
+            title="Prueba"
+            onPress={()=>{
+                console.log(serieInfo.next_episode_to_air)
+            }}
             />
         </ScrollView>
     )

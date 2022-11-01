@@ -5,9 +5,9 @@ const Episodies = ({lastCap, nextCap}) => {
 
     return(
         <View>
-            <Text style={style.titulo} >Ultimo capitulo emitido </Text>
-            <View style={{backgroundColor: "black", margin: 10, borderRadius: 10}} >
-                {lastCap === undefined ? "" :
+            {lastCap === undefined ? "" : <Text style={style.titulo} >Ultimo capitulo emitido </Text>}
+            {lastCap === undefined ? "" :
+            <View style={{backgroundColor: "black", margin: 10, borderRadius: 10}} >    
                 <View style={{flexDirection: "row"}} >
                     <Image 
                     source={{uri: `https://image.tmdb.org/t/p/original${lastCap.still_path}`}}
@@ -25,9 +25,31 @@ const Episodies = ({lastCap, nextCap}) => {
                         </ScrollView>
                     </View>
                 </View>
-                
-                }
-            </View>
+            </View>    
+            }
+    
+            {nextCap === null ? "" : <Text style={style.titulo} >Proximo capitulo </Text>}
+            {nextCap === null ? "" :
+            <View style={{backgroundColor: "black", margin: 10, borderRadius: 10}} >    
+                <View style={{flexDirection: "row"}} >
+                    <Image 
+                    source={{uri: `https://image.tmdb.org/t/p/original${nextCap.still_path}`}}
+                    resizeMode="cover"
+                    style={{width: 230, height: 180, borderRadius: 10, marginRight: 8}}
+                    />
+                    <View style={{marginTop: 5, flex: 1, padding: 5, height: 170}} >
+                        <Text style={style.name} > {nextCap.name} </Text>
+                        <View style={style.voteContainer}>
+                            <AntDesign name="star" size={13} color="#C8F560" />
+                            <Text style={style.vote} > {nextCap.vote_average.toFixed(1)} </Text>
+                        </View>
+                        <ScrollView>
+                            <Text style={style.description} >{nextCap.overview}</Text>
+                        </ScrollView>
+                    </View>
+                </View>
+            </View>    
+            }
         </View>
     )
 }

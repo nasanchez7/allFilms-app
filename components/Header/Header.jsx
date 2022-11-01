@@ -39,11 +39,13 @@ const styles = StyleSheet.create({
     container: {
     },
     header: {
-        margin: 10
+        margin: 10,
+        borderRadius: 10
     },
     imagen: {
         height: 200,
         position: "relative",
+        borderRadius: 10
     },
     movie: {
         position: "absolute",

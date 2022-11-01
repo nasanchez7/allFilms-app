@@ -16,6 +16,7 @@ const Episodies = ({lastCap, nextCap}) => {
                     />
                     <View style={{marginTop: 5, flex: 1, padding: 5, height: 170}} >
                         <Text style={style.name} > {lastCap.name} </Text>
+                        <Text style={style.capNumber} > Capitulo {lastCap.episode_number} </Text>
                         <View style={style.voteContainer}>
                             <AntDesign name="star" size={13} color="#C8F560" />
                             <Text style={style.vote} > {lastCap.vote_average.toFixed(1)} </Text>
@@ -30,7 +31,8 @@ const Episodies = ({lastCap, nextCap}) => {
     
             {nextCap === null ? "" : <Text style={style.titulo} >Proximo capitulo </Text>}
             {nextCap === null ? "" :
-            <View style={{backgroundColor: "black", margin: 10, borderRadius: 10}} >    
+            <View style={{backgroundColor: "black", margin: 10, borderRadius: 10}} > 
+                {nextCap === undefined ? "" :
                 <View style={{flexDirection: "row"}} >
                     <Image 
                     source={{uri: `https://image.tmdb.org/t/p/original${nextCap.still_path}`}}
@@ -39,6 +41,7 @@ const Episodies = ({lastCap, nextCap}) => {
                     />
                     <View style={{marginTop: 5, flex: 1, padding: 5, height: 170}} >
                         <Text style={style.name} > {nextCap.name} </Text>
+                        <Text style={style.capNumber} > Capitulo {nextCap.episode_number} </Text>
                         <View style={style.voteContainer}>
                             <AntDesign name="star" size={13} color="#C8F560" />
                             <Text style={style.vote} > {nextCap.vote_average.toFixed(1)} </Text>
@@ -48,6 +51,7 @@ const Episodies = ({lastCap, nextCap}) => {
                         </ScrollView>
                     </View>
                 </View>
+                }   
             </View>    
             }
         </View>
@@ -83,6 +87,10 @@ const style = StyleSheet.create({
         color: "#C8F560",
         alignSelf: "flex-start",
         fontSize: 10
+    },
+    capNumber: {
+        color: "gray",
+        fontSize: 9
     }
 })
 

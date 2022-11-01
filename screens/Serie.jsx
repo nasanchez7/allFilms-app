@@ -5,6 +5,7 @@ import Cast from "../components/Show/Cast";
 import CreatedBy from "../components/Show/CreatedBy";
 import Seasons from "../components/Show/Seasons";
 import Episodies from "../components/Show/Episodies";
+import Networks from "../components/Show/Networks";
 
 
 const Serie = ({ route }) => {
@@ -83,10 +84,11 @@ const Serie = ({ route }) => {
             lastCap={serieInfo.last_episode_to_air}
             nextCap={serieInfo.next_episode_to_air}
             />
+            <Networks networks={serieInfo.networks}/>
             <Button 
             title="Prueba"
             onPress={()=>{
-                console.log(serieInfo.next_episode_to_air)
+                console.log(serieInfo.networks)
             }}
             />
         </ScrollView>

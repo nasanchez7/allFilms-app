@@ -4,6 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import Cast from "../components/Show/Cast";
 import CreatedBy from "../components/Show/CreatedBy";
 import Seasons from "../components/Show/Seasons";
+import Episodies from "../components/Show/Episodies";
 
 
 const Serie = ({ route }) => {
@@ -78,6 +79,10 @@ const Serie = ({ route }) => {
             <CreatedBy info={serieInfo.created_by} />
             <Cast cast={cast}/>
             <Seasons seasons={serieInfo.seasons}/>
+            <Episodies
+            lastCap={serieInfo.last_episode_to_air}
+            nextCap={serieInfo.next_episode_to_air}
+            />
         </ScrollView>
     )
 }

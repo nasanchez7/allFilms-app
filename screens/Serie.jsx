@@ -85,12 +85,12 @@ const Serie = ({ route }) => {
             nextCap={serieInfo.next_episode_to_air}
             />
             <Networks networks={serieInfo.networks}/>
-            <Button 
+{/*             <Button 
             title="Prueba"
             onPress={()=>{
                 console.log(serieInfo.networks)
             }}
-            />
+            /> */}
         </ScrollView>
     )
 }

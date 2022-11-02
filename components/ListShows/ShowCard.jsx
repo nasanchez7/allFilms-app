@@ -18,7 +18,9 @@ const ShowCard = ({data, navigation}) => {
                 resizeMode="cover"
                 style={{width: 130, height: 180, borderRadius: 10}}
                 />
-                <Text style={style.title} > {data.original_name} </Text>
+                {data.original_title === undefined ? <Text style={style.title} > {data.original_name} </Text>:
+                <Text style={style.title} > {data.original_title} </Text>
+                }
             </View>
         </TouchableOpacity>
     )

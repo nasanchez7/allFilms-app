@@ -33,6 +33,7 @@ const Movie = ({route}) => {
         setSimilar(data.results)
     }
 
+
     useEffect(()=> {
         movieFetch()
         castFetch()
@@ -84,10 +85,10 @@ const Movie = ({route}) => {
             </ImageBackground>
             <Cast cast={cast}/>
             <Similar similares={similar}/>
-            <Button 
+{/*             <Button 
             title="prueba"
-            onPress={()=> console.log(cast)}
-            />
+            onPress={()=> console.log("")}
+            /> */}
         </ScrollView>
     )
 }

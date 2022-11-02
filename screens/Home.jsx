@@ -3,12 +3,14 @@ import { View, ScrollView, StyleSheet, Button} from "react-native";
 import Header from "../components/Header/Header";
 import ListMovies from "../components/ListMovies/ListMovies";
 import ListShows from "../components/ListShows/ListShows";
+import ListUpcomings from "../components/ListUpcomings/ListUpcomings";
 
 const Home = ({navigation}) => {
 
     const [movie, setMovie] = useState({});
-    const [movies, setMovies] = useState({});
-    const [shows, setShows] = useState({});
+    const [movies, setMovies] = useState([]);
+    const [shows, setShows] = useState([]);
+    const [upcomings, setUpcomings] = useState([]);
     const apiKey = "8c04e8d54f6cd03989b2ce231b026efa";
 
     const moviesFetch = async () => {
@@ -24,20 +26,29 @@ const Home = ({navigation}) => {
         setShows(data.results)
     }
 
+    const upcomingsFetch = async () => {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=es&page=1`)
+        const data = await response.json()
+        setUpcomings(data.results)
+    }
+
     useEffect(()=>{
         moviesFetch()
         showsFetch()
+        upcomingsFetch()
     }, [])
 
     return(
         <ScrollView>
             <Header pelicula={movie} navigation={navigation} />
+            <ListUpcomings upcomings={upcomings} navigation={navigation}/>
             <ListMovies data={movies} navigation={navigation} />
             <ListShows navigation={navigation} data={shows} />
-{/*             <Button 
+
+          {/*   <Button 
             title="prueba"
-            onPress={()=> console.log(shows)}
-            /> */}
+            onPress={()=> console.log(upcomings)}
+            />  */}
         </ScrollView>
     )
 }
@@ -53,27 +64,3 @@ const styles = StyleSheet.create({
 
 export default Home;
 
-
-//Rutas dinamicas
-
-/*
-<TouchableOpacity style={styles.boton}
-            onPress= {() => {
-                navigation.navigate("Pelicula", {
-                    pelicula: "Star Wars"
-                })
-            }}
-            >
-                <Text> Pelicula </Text>
-</TouchableOpacity>
-
-<TouchableOpacity style={styles.boton}
-            onPress= {() => {
-                navigation.navigate("Serie", {
-                    serie: "House Of The Dragon"
-                })
-            }}
->
-                <Text> Serie </Text>
-</TouchableOpacity>
-*/ 

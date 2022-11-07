@@ -4,9 +4,8 @@ import { Text, View, StyleSheet, TouchableOpacity, ImageBackground, FlatList, us
 import { AntDesign } from '@expo/vector-icons';
 import { useState, useRef } from "react";
 
-const Header = ({navigation, pelicula, peliculas}) => {
+const Header = ({navigation, peliculas}) => {
     const [currentIndex, setCurrentIndex] = useState(0)
-    const imagen = `https://image.tmdb.org/t/p/original${pelicula.backdrop_path}`;
     const {width} = useWindowDimensions();
     const scrollX = useRef(new Animated.Value(0)).current;
     const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50}).current

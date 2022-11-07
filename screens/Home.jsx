@@ -7,7 +7,6 @@ import ListUpcomings from "../components/ListUpcomings/ListUpcomings";
 
 const Home = ({navigation}) => {
 
-    const [movie, setMovie] = useState({});
     const [movies, setMovies] = useState([]);
     const [carrouselMovies, setCarrouselMovies] = useState([]);
     const [shows, setShows] = useState([]);
@@ -18,7 +17,6 @@ const Home = ({navigation}) => {
         const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es&page=1`)
         const data = await response.json()
         setCarrouselMovies([data.results[0], data.results[1], data.results[2], data.results[3]])
-        setMovie(data.results[0])
         setMovies(data.results)
     }
 
@@ -42,7 +40,7 @@ const Home = ({navigation}) => {
 
     return(
         <ScrollView>
-            <Header pelicula={movie} navigation={navigation} peliculas={carrouselMovies} />
+            <Header navigation={navigation} peliculas={carrouselMovies} />
             <ListUpcomings upcomings={upcomings} navigation={navigation}/>
             <ListMovies data={movies} navigation={navigation} />
             <ListShows navigation={navigation} data={shows} />

@@ -6,6 +6,7 @@ import CreatedBy from "../components/Show/CreatedBy";
 import Seasons from "../components/Show/Seasons";
 import Episodies from "../components/Show/Episodies";
 import Networks from "../components/Show/Networks";
+import Trailers from "../components/Movie/Trailers";
 
 
 const Serie = ({ route }) => {
@@ -13,6 +14,7 @@ const Serie = ({ route }) => {
     const {serie} = route.params
     const [serieInfo, setSerieInfo] = useState([])
     const [cast, setCast] = useState([]);
+    const [trailers, setTrailers] = useState([]);
     const apiKey = "8c04e8d54f6cd03989b2ce231b026efa";
     const portada = `https://image.tmdb.org/t/p/original${serieInfo.backdrop_path}`; 
     const poster = `https://image.tmdb.org/t/p/original${serieInfo.poster_path}` 
@@ -30,9 +32,16 @@ const Serie = ({ route }) => {
         setCast(data.cast)
     }
 
+    const trailerFetch= async () => {
+        const response = await fetch(`https://api.themoviedb.org/3/tv/${serie}/videos?api_key=${apiKey}&language=es`)
+        const data = await response.json()
+        setTrailers(data.results)
+    }
+
     useEffect(()=>{
         serieFetch()
         castFetch()
+        trailerFetch()
     }, [])
 
     return(
@@ -79,6 +88,7 @@ const Serie = ({ route }) => {
             </ImageBackground>
             <CreatedBy info={serieInfo.created_by} />
             <Cast cast={cast}/>
+            <Trailers trailers={trailers}/>
             <Seasons seasons={serieInfo.seasons}/>
             <Episodies
             lastCap={serieInfo.last_episode_to_air}

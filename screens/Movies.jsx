@@ -36,10 +36,6 @@ const Movies = ({navigation}) => {
                     genres={genres}
                     />
                 </View>
-                
-{/*                 <Button title="prueba"
-                    onPress={()=>console.log(movies)}
-                /> */}
             </ScrollView>
         </SafeAreaView>
     )

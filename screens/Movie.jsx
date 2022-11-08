@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { AntDesign } from '@expo/vector-icons';
 import Cast from "../components/Movie/Cast";
 import Similar from "../components/Movie/Similar";
+import Trailers from "../components/Movie/Trailers";
 
 const Movie = ({route}) => {
 
@@ -10,6 +11,7 @@ const Movie = ({route}) => {
     const [movie, setMovie] = useState({});
     const [cast, setCast] = useState([]);
     const [similar, setSimilar] = useState([]);
+    const [trailers, setTrailers] = useState([])
     const apiKey = "8c04e8d54f6cd03989b2ce231b026efa";
     const portada = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`; 
     const poster = `https://image.tmdb.org/t/p/original${movie.poster_path}`
@@ -33,11 +35,18 @@ const Movie = ({route}) => {
         setSimilar(data.results)
     }
 
+    const trailerFetch = async () => {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${pelicula}/videos?api_key=${apiKey}&language=es`)
+        const data = await response.json()
+        setTrailers(data.results)
+    }
+
 
     useEffect(()=> {
         movieFetch()
         castFetch()
         similarFetch()
+        trailerFetch()
     }, [])
 
 
@@ -84,11 +93,12 @@ const Movie = ({route}) => {
                 </View>
             </ImageBackground>
             <Cast cast={cast}/>
+            <Trailers trailers={trailers}/>
             <Similar similares={similar}/>
-{/*             <Button 
+            <Button 
             title="prueba"
-            onPress={()=> console.log("")}
-            /> */}
+            onPress={()=> console.log(trailers)}
+            /> 
         </ScrollView>
     )
 }

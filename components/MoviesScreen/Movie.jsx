@@ -1,9 +1,6 @@
-import { Text, View, Image, TouchableOpacity, StyleSheet, ScrollView, Button } from "react-native";
-import { AntDesign } from '@expo/vector-icons';
+import { Image, TouchableOpacity, StyleSheet } from "react-native";
 
 const Movie = ({item, navigation}) => {
-    
-
     return(
         <TouchableOpacity
         style={style.container}

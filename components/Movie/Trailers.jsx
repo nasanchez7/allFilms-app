@@ -10,6 +10,7 @@ const Trailers = ({trailers}) => {
         contentContainerStyle={{padding:10}}
         data={trailers}
         horizontal
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({item}) => 
         <View style={{width: 280, marginRight: 10}}>

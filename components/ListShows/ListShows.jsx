@@ -10,7 +10,7 @@ const ListShows = ({data, navigation}) => {
             <FlatList
             data={data}
             horizontal
-            showsVerticalScrollIndicator = {false}
+            showsHorizontalScrollIndicator={false}
             renderItem= { ({item}) =>
                 <ShowCard data={item} navigation={navigation} />
             } 

@@ -9,7 +9,7 @@ const ListMovies = ({data, navigation}) => {
             <Text style={style.titulo} > Peliculas destacadas </Text>
                 <FlatList
                 horizontal
-                showsVerticalScrollIndicator = {false}
+                showsHorizontalScrollIndicator={false}
                 data={data}
                 renderItem={ ({item}) => 
                     <MovieCard navigation={navigation} data={item}/>

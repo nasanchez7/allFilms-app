@@ -9,6 +9,7 @@ const CreatedBy = ({info}) => {
             <FlatList
             data={info}
             horizontal
+            showsHorizontalScrollIndicator={false}
             style={{padding:10}}
             renderItem={({item}) => 
             <View>

@@ -10,6 +10,7 @@ const Cast = ({cast}) => {
             <FlatList
             data={cast}
             horizontal
+            showsHorizontalScrollIndicator={false}
             style={{padding: 10}} 
             renderItem={ ({item}) => 
                 <View key={item.id}>

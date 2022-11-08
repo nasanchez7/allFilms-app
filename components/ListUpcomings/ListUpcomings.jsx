@@ -10,7 +10,7 @@ const ListUpcomings = ({upcomings, navigation}) => {
             <FlatList
             data={upcomings}
             horizontal
-            showsVerticalScrollIndicator = {false}
+            showsHorizontalScrollIndicator={false}
             renderItem= { ({item}) =>
                 <MovieCard data={item} navigation={navigation}/>
             } 

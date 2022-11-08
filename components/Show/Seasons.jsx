@@ -9,6 +9,7 @@ const Seasons = ({seasons}) => {
             <FlatList 
             data={seasons}
             horizontal
+            showsHorizontalScrollIndicator={false}
             style={{padding: 10}}
             renderItem={({item}) => 
             <View>

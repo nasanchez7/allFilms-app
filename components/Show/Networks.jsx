@@ -8,6 +8,7 @@ const Networks = ({networks}) => {
             <FlatList
             data={networks}
             horizontal
+            showsHorizontalScrollIndicator={false}
             style={{padding: 10}}
             renderItem={({item}) => 
             <Image

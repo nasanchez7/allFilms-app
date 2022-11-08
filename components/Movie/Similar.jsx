@@ -9,6 +9,7 @@ const Similar = ({similares}) => {
             data={similares}
             style={{padding: 10}}
             horizontal
+            showsHorizontalScrollIndicator={false}
             renderItem={ ({item}) => 
             <TouchableOpacity
             >

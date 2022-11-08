@@ -46,46 +46,35 @@ const Serie = ({ route }) => {
 
     return(
         <ScrollView>
-            <ImageBackground
+            <Image
             source={{uri: portada}}
             resizeMode= "cover"
             style={style.portada}
-            >
-                <View style={{flexDirection: "row", backgroundColor: "rgba(0, 0, 0, 0.582)", flex: 1, alignSelf: 'stretch',
-                alignItems: "center", justifyContent: "center"
-            }} >
-                    <Image
-                    source={{uri: poster}}
-                    resizeMode= "cover"
-                    style={style.poster}
-                    />
-                    <View style={style.info} >
-                        <View style={{flexDirection: "row", alignItems: "center"}} >
-                            <Text style={style.titulo} > {serieInfo.original_name} </Text>
-                            <View style={style.vote}>
-                                <AntDesign name="star" size={12} color="#C8F560" />
-                                {vote === undefined ? "" : 
-                                <Text style={{color: "#C8F560", fontSize: 12}} > {vote.toFixed(1)} </Text>
-                                }
-                            </View>
-                        </View>
-                        {serieInfo.genres === undefined ? <Text></Text>:
-                        <View style={{flexDirection: "row", marginTop: 10, flexWrap: "wrap"}} >
-                            {serieInfo.genres.map((g,index) => 
-                                <View style={style.genero} key={index} >
-                                    <Text style={{fontSize: 10}} > {g.name} </Text>
-                                </View> 
-                            )}
-                        </View>
+            />
+            <View style={style.info} >
+                <View style={{flexDirection: "row", alignItems: "center", justifyContent: "space-between"}} >
+                    <Text style={style.titulo} > {serieInfo.original_name} </Text>
+                    <View style={style.vote}>
+                        <AntDesign name="star" size={12} color="#C8F560" />
+                        {vote === undefined ? "" : 
+                        <Text style={{color: "#C8F560", fontSize: 12}} > {vote.toFixed(1)} </Text>
                         }
-                        <View style={{height: 100}}>
-                            <ScrollView>
-                                <Text style={style.descripcion} > {serieInfo.overview} </Text>
-                            </ScrollView>
-                        </View>
                     </View>
                 </View>
-            </ImageBackground>
+                {serieInfo.genres === undefined ? <Text></Text>:
+                    <View style={{flexDirection: "row", marginTop: 10, flexWrap: "wrap", marginBottom: 10}} >
+                    {serieInfo.genres.map((g,index) => 
+                        <View style={style.genero} key={index} >
+                            <Text style={{fontSize: 10}} > {g.name} </Text>
+                        </View> 
+                    )}
+                    </View>
+                }
+            </View>
+            <View>
+                <Text style={style.tituloTres} >Sinopsis</Text>
+                <Text style={style.descripcion} > {serieInfo.overview} </Text>
+            </View>
             <CreatedBy info={serieInfo.created_by} />
             <Cast cast={cast}/>
             <Trailers trailers={trailers}/>
@@ -107,9 +96,11 @@ const Serie = ({ route }) => {
 
 const style = StyleSheet.create({
     portada: {
-        height: 300,
+        height: 230,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        borderBottomEndRadius: 20,
+        borderBottomStartRadius: 20
     },
     poster: {
         height: 200,
@@ -117,17 +108,18 @@ const style = StyleSheet.create({
         borderRadius: 10
     },
     info: {
-        width: 150,
-        padding: 10
+        padding: 5,
+        marginTop: 10
     },
     titulo: {
         fontWeight: "bold",
-        fontSize: 15,
-        color: "white"
+        fontSize: 18,
+        width: 290
     },
     descripcion: {
         fontSize: 10,
-        color: "#C8F560"
+        marginTop: 10,
+        paddingStart: 5
     },
     genero: {
         backgroundColor: "#C8F560",
@@ -150,6 +142,12 @@ const style = StyleSheet.create({
         backgroundColor: "black",
         borderRadius: 10,
         padding: 5
+    },
+    tituloTres:{
+        fontSize: 15,
+        fontWeight: "bold",
+        color: "black",
+        paddingLeft: 5
     }
 })
 

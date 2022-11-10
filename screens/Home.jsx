@@ -54,11 +54,6 @@ const Home = ({navigation}) => {
             <ListActors actors={actors} navigation={navigation} />
             <ListMovies data={movies} navigation={navigation} />
             <ListShows navigation={navigation} data={shows} />
-{/* 
-        <Button 
-            title="prueba"
-            onPress={()=> console.log(carrouselMovies)}
-            /> */}
         </ScrollView>
     )
 }

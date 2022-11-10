@@ -107,10 +107,6 @@ const Movie = ({route, navigation}) => {
             <Cast cast={cast}/>
             <Trailers trailers={trailers}/>
             <Similar similares={similar}/>
-            {/* <Button 
-            title="prueba"
-            onPress={()=> console.log(trailers)}
-            />  */}
         </ScrollView>
     )
 }

@@ -8,7 +8,8 @@ const MovieCard = ({data, navigation}) => {
         <TouchableOpacity
         onPress= {() => {
             navigation.navigate("Pelicula", {
-                pelicula: data.id
+                pelicula: data.id,
+                name: data.title
             })
         }}
         >

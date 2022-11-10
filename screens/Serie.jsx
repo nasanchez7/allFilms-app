@@ -7,11 +7,13 @@ import Seasons from "../components/Show/Seasons";
 import Episodies from "../components/Show/Episodies";
 import Networks from "../components/Show/Networks";
 import Trailers from "../components/Movie/Trailers";
+import { useLayoutEffect } from "react";
 
 
-const Serie = ({ route }) => {
+const Serie = ({ route, navigation }) => {
 
     const {serie} = route.params
+    const {name} = route.params
     const [serieInfo, setSerieInfo] = useState([])
     const [cast, setCast] = useState([]);
     const [trailers, setTrailers] = useState([]);
@@ -43,6 +45,13 @@ const Serie = ({ route }) => {
         castFetch()
         trailerFetch()
     }, [])
+
+    useLayoutEffect(()=>{
+        navigation.setOptions({
+            headerBackTitle: "Inicio",
+            headerTitle: name
+        })
+    }, [navigation])
 
     return(
         <ScrollView>

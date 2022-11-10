@@ -17,9 +17,10 @@ const Nav = () => {
             initialRouteName="Inicio"
             screenOptions={{
                 tabBarActiveTintColor: "rgba(3, 92, 3, 0.795)",
+                tabBarInactiveTintColor: "black",
+                tabBarStyle: {backgroundColor: "#C8F560"},
                 headerShown: false
             }}
-            
             >
                 <Tab.Screen name="Home" component={HomeStack}
                 options={{

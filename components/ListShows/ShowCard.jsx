@@ -8,7 +8,8 @@ const ShowCard = ({data, navigation}) => {
         <TouchableOpacity
         onPress= {() => {
             navigation.navigate("Serie", {
-                serie: data.id
+                serie: data.id,
+                name: data.original_name
             })
         }}
         >

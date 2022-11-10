@@ -4,14 +4,16 @@ import { AntDesign } from '@expo/vector-icons';
 import Cast from "../components/Movie/Cast";
 import Similar from "../components/Movie/Similar";
 import Trailers from "../components/Movie/Trailers";
+import { useLayoutEffect } from "react";
 
-const Movie = ({route}) => {
+const Movie = ({route, navigation}) => {
 
     const { pelicula } = route.params
+    const { name } = route.params
     const [movie, setMovie] = useState({});
     const [cast, setCast] = useState([]);
     const [similar, setSimilar] = useState([]);
-    const [trailers, setTrailers] = useState([])
+    const [trailers, setTrailers] = useState([]);
     const apiKey = "8c04e8d54f6cd03989b2ce231b026efa";
     const portada = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`; 
     const poster = `https://image.tmdb.org/t/p/original${movie.poster_path}`
@@ -41,7 +43,6 @@ const Movie = ({route}) => {
         setTrailers(data.results)
     }
 
-
     useEffect(()=> {
         movieFetch()
         castFetch()
@@ -49,6 +50,13 @@ const Movie = ({route}) => {
         trailerFetch()
     }, [])
 
+    
+    useLayoutEffect(()=>{
+        navigation.setOptions({
+            headerBackTitle: "Inicio",
+            headerTitle: name
+        })
+    }, [navigation])
 
     return(
         <ScrollView>

@@ -7,12 +7,18 @@ import Serie from "../../screens/Serie";
 const HomeStack = () => {
 
     const HomeStack = createNativeStackNavigator();
+    const globalScreenOptions = {
+        headerStyle: { backgroundColor: "#C8F560" },
+        headerTitleStyle: { color: "black"},
+        headerTintColor: "black"
+    }
 
     return(
         <HomeStack.Navigator
-        initialRouteName="Inicio"
+        initialRouteName="allFilms"
+        screenOptions={globalScreenOptions}
         >
-            <HomeStack.Screen name="Inicio" component={Home} />
+            <HomeStack.Screen name="allFilms" component={Home} />
             <HomeStack.Screen name="Pelicula" component={Movie} />
             <HomeStack.Screen name="Serie" component={Serie} />
         </HomeStack.Navigator>

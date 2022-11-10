@@ -8,9 +8,9 @@ const HomeStack = () => {
 
     const HomeStack = createNativeStackNavigator();
     const globalScreenOptions = {
-        headerStyle: { backgroundColor: "#C8F560" },
-        headerTitleStyle: { color: "black"},
-        headerTintColor: "black"
+        headerStyle: { backgroundColor: "#111315" },
+        headerTitleStyle: { color: "white"},
+        headerTintColor: "white"
     }
 
     return(

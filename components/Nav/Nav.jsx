@@ -16,9 +16,9 @@ const Nav = () => {
             <Tab.Navigator
             initialRouteName="Inicio"
             screenOptions={{
-                tabBarActiveTintColor: "rgba(3, 92, 3, 0.795)",
-                tabBarInactiveTintColor: "black",
-                tabBarStyle: {backgroundColor: "#C8F560"},
+                tabBarActiveTintColor: "#C8F560",
+                tabBarInactiveTintColor: "white",
+                tabBarStyle: {backgroundColor: "#111315"},
                 headerShown: false
             }}
             >

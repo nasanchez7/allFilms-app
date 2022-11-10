@@ -48,7 +48,7 @@ const Home = ({navigation}) => {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={{backgroundColor: "#2D2D2D"}}>
             <Header navigation={navigation} peliculas={carrouselMovies} />
             <ListUpcomings upcomings={upcomings} navigation={navigation}/>
             <ListActors actors={actors} navigation={navigation} />

@@ -18,7 +18,7 @@ const CreatedBy = ({info}) => {
                 resizeMode="cover"
                 style={{width: 130, height: 180, borderRadius: 10, marginRight: 10}}
                 />
-                <Text style={{marginTop: 5, fontSize: 12}} > {item.name} </Text>
+                <Text style={{marginTop: 5, fontSize: 12, color: "white"}} > {item.name} </Text>
             </View>
         }
             />
@@ -30,7 +30,7 @@ const style = StyleSheet.create({
     titulo: {
         fontSize: 15,
         fontWeight: "bold",
-        color: "black",
+        color: "white",
         paddingLeft: 5,
         paddingTop: 10,
     }

@@ -33,7 +33,8 @@ const style = StyleSheet.create({
         fontWeight: "bold",
         width: 130,
         fontSize: 10,
-        marginTop: 5
+        marginTop: 5,
+        color: "white"
     }
 })
 

@@ -30,7 +30,7 @@ const style = StyleSheet.create({
     titulo: {
         fontSize: 15,
         fontWeight: "bold",
-        color: "black",
+        color: "white",
         paddingLeft: 5,
         paddingTop: 10,
         marginBottom: 10
@@ -38,7 +38,8 @@ const style = StyleSheet.create({
     nombre: {
         marginTop: 5,
         width: 120,
-        fontSize: 12
+        fontSize: 12,
+        color: "white"
     }
 })
 

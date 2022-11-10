@@ -19,7 +19,7 @@ const Trailers = ({trailers}) => {
             width={280}
             videoId={item.key}
             />
-            <Text> 
+            <Text style={{color: "white"}}> 
                 {item.name} 
             </Text>
         </View>
@@ -32,7 +32,7 @@ const style = StyleSheet.create({
     titulo: {
         fontSize: 15,
         fontWeight: "bold",
-        color: "black",
+        color: "white",
         paddingLeft: 5,
         paddingTop: 10,
         marginBottom: 10

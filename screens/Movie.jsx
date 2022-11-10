@@ -59,7 +59,7 @@ const Movie = ({route, navigation}) => {
     }, [navigation])
 
     return(
-        <ScrollView>
+        <ScrollView style={{backgroundColor: "#2D2D2D"}}>
             <ImageBackground
             source={{uri: portada}}
             resizeMode= "cover"
@@ -135,11 +135,13 @@ const style = StyleSheet.create({
     titulo: {
         fontWeight: "bold",
         fontSize: 18,
+        color: "white"
     },
     descripcion: {
         fontSize: 10,
         marginTop: 10,
-        paddingStart: 5
+        paddingStart: 5,
+        color: "white"
     },
     genero: {
         backgroundColor: "#C8F560",
@@ -151,14 +153,14 @@ const style = StyleSheet.create({
     tituloDos: {
         fontSize: 15,
         fontWeight: "bold",
-        color: "black",
+        color: "white",
         paddingLeft: 5,
         paddingTop: 10,
     },
     tituloTres:{
         fontSize: 15,
         fontWeight: "bold",
-        color: "black",
+        color: "white",
         paddingLeft: 5
     },  
     vote: {

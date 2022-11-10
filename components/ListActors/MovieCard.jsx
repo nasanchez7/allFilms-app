@@ -6,7 +6,10 @@ const MovieCard = ({item, navigation}) => {
         <TouchableOpacity
         style={{marginBottom: 10}}
         onPress={()=>{
-            navigation.navigate("Pelicula", {pelicula: item.id})
+            navigation.navigate("Pelicula", {
+                pelicula: item.id,
+                name: item.title
+            })
         }}
         >
             <Image

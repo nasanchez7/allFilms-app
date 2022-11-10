@@ -18,8 +18,9 @@ const Seasons = ({seasons}) => {
                 resizeMode="cover"
                 style={{width: 130, height: 180, borderRadius: 10, marginRight: 10}}
                 />
-                <Text style={{marginTop: 5, width: 130, fontSize: 15, fontWeight: "bold"}} > {item.name} </Text>
-                <Text style={{fontSize: 10}} > {item.episode_count} episodios </Text>
+                <Text style={{marginTop: 5, width: 130, fontSize: 15, fontWeight: "bold",
+            color: "white"}} > {item.name} </Text>
+                <Text style={{fontSize: 10, color: "gray"}} > {item.episode_count} episodios </Text>
             </View>
         }
             />
@@ -31,7 +32,7 @@ const style = StyleSheet.create({
     titulo: {
         fontSize: 15,
         fontWeight: "bold",
-        color: "black",
+        color: "white",
         paddingLeft: 5,
         paddingTop: 10,
     }

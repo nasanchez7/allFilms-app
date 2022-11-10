@@ -20,7 +20,7 @@ const Tv = ({navigation}) => {
 
     return(
         <SafeAreaView>
-            <ScrollView>
+            <ScrollView style={{backgroundColor: "#2D2D2D"}}>
                 <Text style={style.titulo}>Series populares</Text>
                 <ListShows navigation={navigation} shows={shows}/>
             </ScrollView>
@@ -33,7 +33,7 @@ const style = StyleSheet.create({
     titulo: {
         fontSize: 18,
         fontWeight: "bold",
-        color: "black",
+        color: "white",
         paddingLeft: 10,
         paddingTop: 15,
         paddingBottom: 15

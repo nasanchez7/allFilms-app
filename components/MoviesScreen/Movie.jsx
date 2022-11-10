@@ -5,7 +5,10 @@ const Movie = ({item, navigation}) => {
         <TouchableOpacity
         style={style.container}
         onPress={()=>{
-            navigation.navigate("Pelicula", {pelicula: item.id})
+            navigation.navigate("Pelicula", {
+                pelicula: item.id,
+                name: item.title
+            })
         }}
         >
             <Image

@@ -4,7 +4,10 @@ const ShowCard = ({navigation, item}) => {
     return(
         <TouchableOpacity style={style.container}
         onPress={()=>{
-            navigation.navigate("Serie", {serie: item.id})
+            navigation.navigate("Serie", {
+                serie: item.id,
+                name: item.original_name
+            })
         }}
         >
             <Image

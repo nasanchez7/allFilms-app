@@ -46,11 +46,26 @@ const Serie = ({ route }) => {
 
     return(
         <ScrollView>
-            <Image
+            <ImageBackground
             source={{uri: portada}}
             resizeMode= "cover"
             style={style.portada}
-            />
+            >
+                <View style={{
+                    width: "100%",
+                    height: 230,
+                    backgroundColor:"black",
+                    position:"absolute",
+                    top: 0,
+                    opacity: 0.6
+                }}
+                    />
+                <Image
+                source={{uri: poster}}
+                resizeMode="contain"
+                style={style.poster}
+                />
+            </ImageBackground>
             <View style={style.info} >
                 <View style={{flexDirection: "row", alignItems: "center", justifyContent: "space-between"}} >
                     <Text style={style.titulo} > {serieInfo.original_name} </Text>

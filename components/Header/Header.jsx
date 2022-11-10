@@ -34,7 +34,8 @@ const Header = ({navigation, peliculas}) => {
                 <TouchableOpacity style={styles.header}
                 onPress= {() => {
                     navigation.navigate("Pelicula", {
-                        pelicula: item.id
+                        pelicula: item.id,
+                        name: item.title
                     })
                 }}
                 >

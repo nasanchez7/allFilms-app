@@ -1,6 +1,6 @@
 ### allFilms
 
-- [allFilms IOS]( "allFilms IOS") es una aplicacion de peliculas y series, creada con React Native y la API de themoviedb
+- allFilms IOS es una aplicacion de peliculas y series, creada con React Native y la API de themoviedb
 
 - Video de muestra en mi portafolio: https://nadirsanchez.netlify.app/portafolio
 
